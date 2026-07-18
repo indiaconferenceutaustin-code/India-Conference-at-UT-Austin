@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Use the Node.js HTTP server preset so the build runs on Render (and any
+  // plain Node host). The default is cloudflare-module which exports a fetch()
+  // handler without a listener — that causes the "Application exited early"
+  // error on Render. NITRO_PRESET env var still wins in CI if you need to
+  // target a different platform without changing this file.
+  nitro: { preset: "node-server" },
 });
