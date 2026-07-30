@@ -172,6 +172,99 @@ function About() {
         </div>
       </section>
 
+      {/* Student Team Section */}
+      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-border">
+        <div className="mb-16 text-center max-w-2xl mx-auto">
+          <div className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-3">
+            The Organizers
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
+            The Team Behind the 1st Annual UT India Conference
+          </h2>
+          <div className="flex items-center justify-center gap-1.5 h-[3px] w-20 mx-auto mb-4">
+            <div className="bg-[#FF671F] h-full w-full rounded-full"></div>
+            <div className="bg-white/80 h-full w-full rounded-full"></div>
+            <div className="bg-[#046A38] h-full w-full rounded-full"></div>
+          </div>
+          <p className="text-muted text-sm italic">
+            "Building conversations. Inspiring impact. Shaping India's future."
+          </p>
+        </div>
+
+        {/* Executive Board */}
+        <div className="mb-16">
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-accent whitespace-nowrap">
+              Executive Board
+            </h3>
+            <div className="h-px bg-border w-full" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+            {[
+              { name: "Pranjal Awasthi", role: "Conference Chair" },
+              { name: "Divya Sharma", role: "Head of Marketing" },
+              { name: "Anshula Garg", role: "Co-Lead for Finance & Logistics" },
+              { name: "Puneet Purohit", role: "Head of Sponsorship" },
+              { name: "Soham Mukherjee", role: "Co-Lead for Finance & Logistics" },
+            ].map((m) => (
+              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300">
+                <div className="font-bold text-sm text-foreground mb-1">{m.name}</div>
+                <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Coordinators */}
+        <div className="mb-16">
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-accent whitespace-nowrap">
+              Coordinators
+            </h3>
+            <div className="h-px bg-border w-full" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+            {[
+              { name: "Anika Chock", role: "Marketing Coordinator" },
+              { name: "Vineeta Singh", role: "Marketing Coordinator" },
+              { name: "Elizabeth Yang", role: "Marketing Coordinator" },
+              { name: "Sudhir Gopalakrishnan", role: "Operations Coordinator" },
+              { name: "Rishi Wadhwa", role: "Operations Coordinator" },
+            ].map((m) => (
+              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300">
+                <div className="font-bold text-sm text-foreground mb-1">{m.name}</div>
+                <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Volunteers */}
+        <div>
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-accent whitespace-nowrap">
+              Volunteers
+            </h3>
+            <div className="h-px bg-border w-full" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 text-center">
+            {[
+              { name: "Maithili Saralaya", role: "Volunteer" },
+              { name: "Guru Prasad", role: "Volunteer" },
+              { name: "Dev Mangla", role: "Volunteer" },
+              { name: "Renu Prasad", role: "Volunteer" },
+              { name: "Swati Pandey", role: "Volunteer" },
+              { name: "Rahul Paul", role: "Volunteer" },
+            ].map((m) => (
+              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300">
+                <div className="font-bold text-sm text-foreground mb-1">{m.name}</div>
+                <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="mb-12">
           <div className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-2">
