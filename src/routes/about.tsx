@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
+import { Linkedin, Mail, Globe, Twitter, Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -20,26 +21,53 @@ const advisors = [
     name: "Urooj Khan",
     role: "Professor of Accounting; Associate Dean, Hildebrand MBA programs, McCombs",
     image: "/advisors/urooj-khan.jpg",
+    links: {
+      web: "https://www.mccombs.utexas.edu/faculty-and-research/faculty-directory/profile/?username=uk866",
+      email: "urooj.khan@mccombs.utexas.edu",
+      linkedin: "https://www.linkedin.com/in/urooj-khan-0b981017/",
+    },
   },
   {
     name: "Vijay Mahajan",
     role: "John P. Harbin Centennial Chair in Business, McCombs",
     image: "/advisors/vijay-mahajan.jpg",
+    links: {
+      web: "https://liberalarts.utexas.edu/southasia/faculty/mahajanv",
+      email: "vijay.mahajan@mccombs.utexas.edu",
+      linkedin: "https://www.linkedin.com/in/vijay-mahajan-3aa648168/",
+    },
   },
   {
     name: "Kishore Gawande",
     role: "Chair, Department of Business, Government & Society, McCombs",
     image: "/advisors/kishore-gawande.jpg",
+    links: {
+      email: "kishore.gawande@mccombs.utexas.edu",
+      linkedin: "https://www.linkedin.com/in/kishore-gawande-9327773/",
+    },
   },
   {
     name: "Syed Akbar Hyder",
     role: "Director, South Asia Institute; Meyerson Centennial Chair Fellow",
     image: "/advisors/syed-akbar-hyder.jpg",
+    links: {
+      web: "https://liberalarts.utexas.edu/rs/faculty/hydersa",
+      email: "akbarhyder@utexas.edu",
+      linkedin: "https://www.linkedin.com/in/syed-hyder-06ab60210/",
+    },
   },
   {
     name: "Dilawar Syed",
     role: "Associate Professor of Instruction, McCombs & LBJ; former US Cabinet Official",
     image: "/advisors/dilawar-syed.jpg",
+    links: {
+      web: "https://lbj.utexas.edu/dilawar-syed",
+      personalWeb: "https://www.dilawarsyed.com/",
+      twitter: "https://x.com/dilawar",
+      instagram: "https://www.instagram.com/syeddilawar/",
+      email: "dilawar.syed@austin.utexas.edu",
+      linkedin: "https://www.linkedin.com/in/dilawarsyed/",
+    },
   },
 ];
 
@@ -150,21 +178,89 @@ function About() {
         </div>
         <div className="grid grid-cols-5 gap-4 md:gap-6">
           {advisors.map((a) => (
-            <div key={a.name} className="group flex flex-col space-y-4">
-              <div className="aspect-[4/5] bg-secondary outline-1 -outline-offset-1 outline-foreground/5 overflow-hidden rounded-sm relative">
-                <img
-                  src={a.image}
-                  alt={a.name}
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
-                />
+            <div key={a.name} className="group flex flex-col justify-between h-full space-y-4">
+              <div className="space-y-4">
+                <div className="aspect-[4/5] bg-secondary outline-1 -outline-offset-1 outline-foreground/5 overflow-hidden rounded-sm relative">
+                  <img
+                    src={a.image}
+                    alt={a.name}
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold text-base tracking-tight text-foreground transition-colors group-hover:text-accent">
+                    {a.name}
+                  </h3>
+                  <p className="text-xs text-muted mt-2 leading-relaxed">
+                    {a.role}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-base tracking-tight text-foreground transition-colors group-hover:text-accent">
-                  {a.name}
-                </h3>
-                <p className="text-xs text-muted mt-2 leading-relaxed">
-                  {a.role}
-                </p>
+              <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/40">
+                {a.links.linkedin && (
+                  <a
+                    href={a.links.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="LinkedIn"
+                    className="p-1.5 border border-white/5 bg-secondary/20 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors rounded-sm text-muted"
+                  >
+                    <Linkedin className="size-3.5" />
+                  </a>
+                )}
+                {a.links.twitter && (
+                  <a
+                    href={a.links.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="X / Twitter"
+                    className="p-1.5 border border-white/5 bg-secondary/20 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors rounded-sm text-muted"
+                  >
+                    <Twitter className="size-3.5" />
+                  </a>
+                )}
+                {a.links.instagram && (
+                  <a
+                    href={a.links.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Instagram"
+                    className="p-1.5 border border-white/5 bg-secondary/20 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors rounded-sm text-muted"
+                  >
+                    <Instagram className="size-3.5" />
+                  </a>
+                )}
+                {a.links.web && (
+                  <a
+                    href={a.links.web}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Faculty Profile"
+                    className="p-1.5 border border-white/5 bg-secondary/20 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors rounded-sm text-muted"
+                  >
+                    <Globe className="size-3.5" />
+                  </a>
+                )}
+                {a.links.personalWeb && (
+                  <a
+                    href={a.links.personalWeb}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Personal Website"
+                    className="p-1.5 border border-white/5 bg-secondary/20 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors rounded-sm text-muted"
+                  >
+                    <Globe className="size-3.5" />
+                  </a>
+                )}
+                {a.links.email && (
+                  <a
+                    href={`mailto:${a.links.email}`}
+                    title="Email"
+                    className="p-1.5 border border-white/5 bg-secondary/20 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors rounded-sm text-muted"
+                  >
+                    <Mail className="size-3.5" />
+                  </a>
+                )}
               </div>
             </div>
           ))}
