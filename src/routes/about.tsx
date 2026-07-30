@@ -201,14 +201,27 @@ function About() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
             {[
-              { name: "Pranjal Awasthi", role: "Conference Chair" },
-              { name: "Divya Sharma", role: "Head of Marketing" },
-              { name: "Anshula Garg", role: "Co-Lead for Finance & Logistics" },
-              { name: "Puneet Purohit", role: "Head of Sponsorship" },
-              { name: "Soham Mukherjee", role: "Co-Lead for Finance & Logistics" },
+              { name: "Pranjal Awasthi", role: "Conference Chair", linkedin: "https://www.linkedin.com/in/pranjalawasthi/" },
+              { name: "Divya Sharma", role: "Head of Marketing", linkedin: "https://www.linkedin.com/in/divya-shrma/" },
+              { name: "Anshula Garg", role: "Co-Lead for Finance & Logistics", linkedin: "https://www.linkedin.com/in/anshula-garg-cpa/" },
+              { name: "Puneet Purohit", role: "Head of Sponsorship", linkedin: "https://www.linkedin.com/in/punit-purohit" },
+              { name: "Soham Mukherjee", role: "Co-Lead for Finance & Logistics", linkedin: "https://www.linkedin.com/in/mukherjeesoham/" },
             ].map((m) => (
-              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300">
-                <div className="font-bold text-sm text-foreground mb-1">{m.name}</div>
+              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300 flex flex-col justify-center">
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <span className="font-bold text-sm text-foreground">{m.name}</span>
+                  {m.linkedin && (
+                    <a
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-accent transition-colors"
+                      title="LinkedIn Profile"
+                    >
+                      <Linkedin className="size-3.5" />
+                    </a>
+                  )}
+                </div>
                 <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
               </div>
             ))}
@@ -225,14 +238,27 @@ function About() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
             {[
-              { name: "Anika Chock", role: "Marketing Coordinator" },
-              { name: "Vineeta Singh", role: "Marketing Coordinator" },
-              { name: "Elizabeth Yang", role: "Marketing Coordinator" },
-              { name: "Sudhir Gopalakrishnan", role: "Operations Coordinator" },
-              { name: "Rishi Wadhwa", role: "Operations Coordinator" },
+              { name: "Anika Chock", role: "Marketing Coordinator", linkedin: "https://www.linkedin.com/in/anika-chock-8b95a8271/" },
+              { name: "Vineeta Singh", role: "Marketing Coordinator", linkedin: "https://www.linkedin.com/in/vineetasinghmd/" },
+              { name: "Elizabeth Yang", role: "Marketing Coordinator", linkedin: "https://www.linkedin.com/in/elizabeth-y/" },
+              { name: "Sudhir Gopalakrishnan", role: "Operations Coordinator", linkedin: "https://www.linkedin.com/in/sudhirganesh/" },
+              { name: "Rishi Wadhwa", role: "Operations Coordinator", linkedin: "https://www.linkedin.com/in/rishi-wadhwa/" },
             ].map((m) => (
-              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300">
-                <div className="font-bold text-sm text-foreground mb-1">{m.name}</div>
+              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300 flex flex-col justify-center">
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <span className="font-bold text-sm text-foreground">{m.name}</span>
+                  {m.linkedin && (
+                    <a
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-accent transition-colors"
+                      title="LinkedIn Profile"
+                    >
+                      <Linkedin className="size-3.5" />
+                    </a>
+                  )}
+                </div>
                 <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
               </div>
             ))}
@@ -249,15 +275,28 @@ function About() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-6 text-center">
             {[
-              { name: "Maithili Saralaya", role: "Volunteer" },
-              { name: "Guru Prasad", role: "Volunteer" },
-              { name: "Dev Mangla", role: "Volunteer" },
-              { name: "Renu Prasad", role: "Volunteer" },
-              { name: "Swati Pandey", role: "Volunteer" },
-              { name: "Rahul Paul", role: "Volunteer" },
+              { name: "Maithili Saralaya", role: "Volunteer", linkedin: "https://www.linkedin.com/in/maithili-saralaya/" },
+              { name: "Guru Prasad", role: "Volunteer", linkedin: "https://www.linkedin.com/in/prasad-b-guru/" },
+              { name: "Dev Mangla", role: "Volunteer", linkedin: "https://www.linkedin.com/in/devmangla/" },
+              { name: "Renu Prasad", role: "Volunteer", linkedin: "https://www.linkedin.com/in/renu-prasad/" },
+              { name: "Swati Pandey", role: "Volunteer", linkedin: "https://www.linkedin.com/in/swatip28/" },
+              { name: "Rahul Paul", role: "Volunteer", linkedin: "https://www.linkedin.com/in/paul-rahul/" },
             ].map((m) => (
-              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300">
-                <div className="font-bold text-sm text-foreground mb-1">{m.name}</div>
+              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300 flex flex-col justify-center">
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <span className="font-bold text-sm text-foreground">{m.name}</span>
+                  {m.linkedin && (
+                    <a
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-accent transition-colors"
+                      title="LinkedIn Profile"
+                    >
+                      <Linkedin className="size-3.5" />
+                    </a>
+                  )}
+                </div>
                 <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
               </div>
             ))}
