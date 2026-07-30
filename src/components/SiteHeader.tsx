@@ -4,8 +4,6 @@ const nav = [
   { to: "/about", label: "About" },
   { to: "/conference", label: "Conference" },
   { to: "/community", label: "Community" },
-  { to: "/partners", label: "Partners" },
-  { to: "/connect", label: "Connect" },
 ] as const;
 
 export function SiteHeader() {
@@ -32,12 +30,14 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/connect"
-            className="px-3 py-1 bg-foreground text-background text-[11px] font-bold uppercase tracking-widest"
+          <a
+            href="https://www.eventbrite.com/e/ut-austin-india-conference-india-at-100-tickets-1983147471472"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1 bg-accent text-accent-foreground text-[11px] font-bold uppercase tracking-widest hover:opacity-90 transition-opacity"
           >
             Register
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

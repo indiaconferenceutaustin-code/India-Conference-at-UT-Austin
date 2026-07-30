@@ -13,8 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as ConferenceRouteImport } from './routes/conference'
-import { Route as ConnectRouteImport } from './routes/connect'
-import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
@@ -37,16 +35,6 @@ const ConferenceRoute = ConferenceRouteImport.update({
   path: '/conference',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ConnectRoute = ConnectRouteImport.update({
-  id: '/connect',
-  path: '/connect',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PartnersRoute = PartnersRouteImport.update({
-  id: '/partners',
-  path: '/partners',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -58,8 +46,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
-  '/connect': typeof ConnectRoute
-  '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -67,8 +53,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
-  '/connect': typeof ConnectRoute
-  '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -77,38 +61,15 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
-  '/connect': typeof ConnectRoute
-  '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/community'
-    | '/conference'
-    | '/connect'
-    | '/partners'
-    | '/sitemap.xml'
+  fullPaths: '/' | '/about' | '/community' | '/conference' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/community'
-    | '/conference'
-    | '/connect'
-    | '/partners'
-    | '/sitemap.xml'
+  to: '/' | '/about' | '/community' | '/conference' | '/sitemap.xml'
   id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/community'
-    | '/conference'
-    | '/connect'
-    | '/partners'
-    | '/sitemap.xml'
+    '__root__' | '/' | '/about' | '/community' | '/conference' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,8 +77,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CommunityRoute: typeof CommunityRoute
   ConferenceRoute: typeof ConferenceRoute
-  ConnectRoute: typeof ConnectRoute
-  PartnersRoute: typeof PartnersRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -151,20 +110,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConferenceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/connect': {
-      id: '/connect'
-      path: '/connect'
-      fullPath: '/connect'
-      preLoaderRoute: typeof ConnectRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/partners': {
-      id: '/partners'
-      path: '/partners'
-      fullPath: '/partners'
-      preLoaderRoute: typeof PartnersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -180,8 +125,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CommunityRoute: CommunityRoute,
   ConferenceRoute: ConferenceRoute,
-  ConnectRoute: ConnectRoute,
-  PartnersRoute: PartnersRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
