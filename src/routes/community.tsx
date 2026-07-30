@@ -124,32 +124,43 @@ function Community() {
       </section>
 
       {/* Partners Section */}
-      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
+      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border relative overflow-hidden">
+        {/* Subtle Backdrop Glows */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 h-72 rounded-full bg-[#FF671F]/5 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-72 h-72 rounded-full bg-[#046A38]/5 blur-[120px] pointer-events-none" />
+
+        <div className="mb-20 text-center max-w-3xl mx-auto relative z-10">
           <div className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-3">
             Partners & Sponsors
           </div>
           <h2 className="text-4xl font-extrabold tracking-tight mb-4">
             Co-sponsored by UT's leading centers.
           </h2>
-          <p className="text-muted text-sm leading-relaxed">
+          {/* Section Tricolor strike */}
+          <div className="flex items-center justify-center gap-1.5 h-[3px] w-20 mx-auto mb-6">
+            <div className="bg-[#FF671F] h-full w-full rounded-full"></div>
+            <div className="bg-white/80 h-full w-full rounded-full"></div>
+            <div className="bg-[#046A38] h-full w-full rounded-full"></div>
+          </div>
+          <p className="text-muted text-sm leading-relaxed max-w-xl mx-auto">
             The inaugural conference brings together key institutions driving global scholarship, policy dialogue, and innovation across the Indo–US corridor.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
           {partners.map((p, idx) => (
             <div 
               key={p.name} 
-              className="bg-card/40 border border-white/5 hover:border-accent/30 rounded-md p-8 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between"
+              className="bg-card/30 hover:bg-card/50 border border-white/5 hover:border-accent/30 rounded-xl p-8 transition-all duration-500 relative group overflow-hidden flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(255,103,31,0.02)]"
             >
-              {/* Decorative top colored line */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-border group-hover:bg-accent transition-colors" />
-              
               <div>
-                <div className="font-mono text-xs text-muted mb-4 tracking-wider">
-                  PARTNER {String(idx + 1).padStart(2, '0')}
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
+                    Partner {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <div className="size-2 rounded-full bg-border group-hover:bg-accent transition-colors duration-500" />
                 </div>
-                <h3 className="text-lg font-bold tracking-tight mb-3 transition-colors group-hover:text-accent">
+                <h3 className="text-lg font-bold tracking-tight mb-3 transition-colors group-hover:text-accent duration-500">
                   {p.name}
                 </h3>
                 <p className="text-xs text-muted leading-relaxed">
@@ -157,9 +168,17 @@ function Community() {
                 </p>
               </div>
               
-              <div className="mt-6 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-muted group-hover:text-accent transition-colors">
-                <span>The Forty Acres</span>
-                <span>→</span>
+              <div>
+                <div className="mt-8 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-muted group-hover:text-foreground transition-colors duration-500">
+                  <span>The Forty Acres</span>
+                  <span>→</span>
+                </div>
+                {/* Tricolor stripe segments */}
+                <div className="flex h-[3px] w-full mt-4 opacity-20 group-hover:opacity-100 transition-all duration-500 rounded-full overflow-hidden">
+                  <div className="bg-[#FF671F] flex-1"></div>
+                  <div className="bg-white/80 flex-1"></div>
+                  <div className="bg-[#046A38] flex-1"></div>
+                </div>
               </div>
             </div>
           ))}

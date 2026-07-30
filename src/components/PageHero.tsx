@@ -20,6 +20,12 @@ export function PageHero({
         <h1 className="mt-6 text-5xl lg:text-7xl font-black tracking-tighter text-balance leading-[0.95]">
           {title}
         </h1>
+        {/* Indian Flag Tricolor Strike */}
+        <div className="flex items-center gap-1.5 mt-6 h-1 w-24">
+          <div className="bg-[#FF671F] h-full w-full rounded-sm"></div>
+          <div className="bg-white/80 h-full w-full rounded-sm"></div>
+          <div className="bg-[#046A38] h-full w-full rounded-sm"></div>
+        </div>
         {lede && (
           <p className="mt-8 text-xl max-w-2xl font-medium tracking-tight text-pretty text-muted">
             {lede}
