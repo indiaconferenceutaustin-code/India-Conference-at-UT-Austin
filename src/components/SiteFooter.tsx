@@ -49,22 +49,19 @@ export function SiteFooter() {
             <li><Link to="/conference" className="hover:text-accent">Conference Program</Link></li>
             <li><Link to="/about" className="hover:text-accent">Student Team</Link></li>
             <li><Link to="/community" className="hover:text-accent">Volunteer Portal</Link></li>
+            <li><Link to="/chronicle" className="hover:text-accent">The Chronicle</Link></li>
           </ul>
         </div>
         <div>
           <h5 className="text-[10px] font-bold uppercase tracking-widest mb-4">
             Stay Informed
           </h5>
-          <form className="flex border-b border-foreground/20 pb-2">
-            <input
-              type="email"
-              placeholder="Email address"
-              className="bg-transparent text-xs w-full focus:outline-none"
-            />
-            <button type="submit" className="text-xs font-bold">
-              JOIN
-            </button>
-          </form>
+          <div className="font-mono text-xs text-accent uppercase tracking-widest">
+            Coming Soon!
+          </div>
+          <p className="text-[11px] text-muted mt-2 leading-relaxed">
+            Our newsletters and dispatches will be launching soon. Stay tuned.
+          </p>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-border flex flex-wrap gap-4 justify-between items-center">

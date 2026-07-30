@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
-import { Linkedin, Mail, Globe, Twitter, Instagram } from "lucide-react";
+import { Linkedin, Mail, Globe, Twitter, Instagram, User } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -249,7 +249,7 @@ function About() {
                     title="Personal Website"
                     className="p-1.5 border border-white/5 bg-secondary/20 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors rounded-sm text-muted"
                   >
-                    <Globe className="size-3.5" />
+                    <User className="size-3.5" />
                   </a>
                 )}
                 {a.links.email && (

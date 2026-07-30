@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ChronicleRouteImport } from './routes/chronicle'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as ConferenceRouteImport } from './routes/conference'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChronicleRoute = ChronicleRouteImport.update({
+  id: '/chronicle',
+  path: '/chronicle',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CommunityRoute = CommunityRouteImport.update({
@@ -44,6 +50,7 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/chronicle': typeof ChronicleRoute
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/chronicle': typeof ChronicleRoute
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -59,22 +67,42 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/chronicle': typeof ChronicleRoute
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/community' | '/conference' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/chronicle'
+    | '/community'
+    | '/conference'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/community' | '/conference' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/about'
+    | '/chronicle'
+    | '/community'
+    | '/conference'
+    | '/sitemap.xml'
   id:
-    '__root__' | '/' | '/about' | '/community' | '/conference' | '/sitemap.xml'
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/chronicle'
+    | '/community'
+    | '/conference'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ChronicleRoute: typeof ChronicleRoute
   CommunityRoute: typeof CommunityRoute
   ConferenceRoute: typeof ConferenceRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -94,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chronicle': {
+      id: '/chronicle'
+      path: '/chronicle'
+      fullPath: '/chronicle'
+      preLoaderRoute: typeof ChronicleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/community': {
@@ -123,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ChronicleRoute: ChronicleRoute,
   CommunityRoute: CommunityRoute,
   ConferenceRoute: ConferenceRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

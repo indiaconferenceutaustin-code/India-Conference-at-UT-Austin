@@ -180,7 +180,9 @@ function Community() {
           </p>
           <div className="pt-4">
             <a
-              href="mailto:indiaconferenceutaustin@gmail.com"
+              href="https://forms.gle/Ko2q6oa6iievi66HA"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-opacity rounded-sm shadow-md"
             >
               Application Portal

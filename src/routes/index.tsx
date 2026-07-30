@@ -35,7 +35,7 @@ const featured = [
 
 const stats = [
   { value: "8", label: "Conference Sessions" },
-  { value: "20+", label: "Speakers & Moderators" },
+  { value: "20", label: "Speakers & Moderators" },
   { value: "$4T", label: "India Economy" },
   { value: "2047", label: "India's Centennial" },
 ];
