@@ -19,22 +19,27 @@ const advisors = [
   {
     name: "Urooj Khan",
     role: "Professor of Accounting; Associate Dean, Hildebrand MBA programs, McCombs",
+    image: "/advisors/urooj-khan.jpg",
   },
   {
     name: "Vijay Mahajan",
     role: "John P. Harbin Centennial Chair in Business, McCombs",
+    image: "/advisors/vijay-mahajan.jpg",
   },
   {
     name: "Kishore Gawande",
     role: "Chair, Department of Business, Government & Society, McCombs",
+    image: "/advisors/kishore-gawande.jpg",
   },
   {
     name: "Syed Akbar Hyder",
     role: "Director, South Asia Institute; Meyerson Centennial Chair Fellow",
+    image: "/advisors/syed-akbar-hyder.jpg",
   },
   {
     name: "Dilawar Syed",
     role: "Associate Professor of Instruction, McCombs & LBJ; former US Cabinet Official",
+    image: "/advisors/dilawar-syed.jpg",
   },
 ];
 
@@ -143,19 +148,24 @@ function About() {
             generosity of our faculty advisors.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+        <div className="grid grid-cols-5 gap-4 md:gap-6">
           {advisors.map((a) => (
-            <div key={a.name} className="bg-background p-6">
-              <div className="aspect-square bg-secondary rounded-sm grid place-items-center mb-4 max-w-[80px]">
-                <span className="font-mono text-[11px] text-muted">
-                  {a.name
-                    .split(" ")
-                    .map((w) => w[0])
-                    .join("")}
-                </span>
+            <div key={a.name} className="group flex flex-col space-y-4">
+              <div className="aspect-[4/5] bg-secondary outline-1 -outline-offset-1 outline-foreground/5 overflow-hidden rounded-sm relative">
+                <img
+                  src={a.image}
+                  alt={a.name}
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                />
               </div>
-              <h3 className="font-bold tracking-tight">{a.name}</h3>
-              <p className="text-xs text-muted mt-2 leading-relaxed">{a.role}</p>
+              <div>
+                <h3 className="font-bold text-base tracking-tight text-foreground transition-colors group-hover:text-accent">
+                  {a.name}
+                </h3>
+                <p className="text-xs text-muted mt-2 leading-relaxed">
+                  {a.role}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -135,12 +135,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-accent/20">
+      <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-accent/20 relative overflow-hidden">
+        {/* Ambient background glows - Indian Tricolor */}
+        <div className="pointer-events-none absolute top-[5%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#FF671F]/12 blur-[120px] mix-blend-screen animate-pulse duration-[8000ms]" />
+        <div className="pointer-events-none absolute top-[35%] right-[-15%] w-[600px] h-[600px] rounded-full bg-white/[0.06] blur-[140px] mix-blend-screen animate-pulse duration-[12000ms]" />
+        <div className="pointer-events-none absolute bottom-[10%] left-[5%] w-[550px] h-[550px] rounded-full bg-[#046A38]/12 blur-[120px] mix-blend-screen animate-pulse duration-[10000ms]" />
+
         <SiteHeader />
-        <main className="flex-1">
+        <main className="flex-1 relative z-10">
           <Outlet />
         </main>
         <SiteFooter />

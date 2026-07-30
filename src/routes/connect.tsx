@@ -154,7 +154,7 @@ function Connect() {
             </a>
           </div>
 
-          <div className="p-8 bg-foreground text-background">
+          <div className="p-8 bg-secondary text-foreground">
             <div className="font-mono text-xs text-accent mb-4 uppercase tracking-widest">
               Follow
             </div>

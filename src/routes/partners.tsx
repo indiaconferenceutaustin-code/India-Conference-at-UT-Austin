@@ -66,14 +66,14 @@ function Partners() {
         </div>
       </section>
 
-      <section className="bg-foreground text-background py-20 px-6">
+      <section className="bg-secondary text-foreground py-20 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="font-mono text-xs text-accent mb-4">GET INVOLVED</div>
             <h2 className="text-4xl font-bold tracking-tight mb-4">
               Partner with UTAIC.
             </h2>
-            <p className="text-background/70 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               We welcome new academic collaborators, cross-institutional research
               partnerships, and sponsors for future editions of the conference.
             </p>

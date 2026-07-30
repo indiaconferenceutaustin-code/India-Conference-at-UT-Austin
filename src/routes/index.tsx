@@ -155,7 +155,7 @@ function Home() {
       </section>
 
       {/* Sessions preview */}
-      <section className="bg-foreground text-background py-24 px-6">
+      <section className="bg-secondary text-foreground py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
             <div>
@@ -166,7 +166,7 @@ function Home() {
                 Across the questions that will define the next century.
               </h3>
             </div>
-            <p className="text-background/70 text-base leading-relaxed self-end italic">
+            <p className="text-muted-foreground text-base leading-relaxed self-end italic">
               "At the stroke of midnight on August 15, 2047, India will turn 100.
               The choices made over the next two decades — on growth, governance,
               technology, sustainability, and global positioning — will determine
