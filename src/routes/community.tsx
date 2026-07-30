@@ -47,7 +47,7 @@ const pillars = [
   {
     label: "Continue the Conversation",
     title: "Beyond one afternoon.",
-    body: "Reading circles, follow-on salons, and the India Insights archive keep the questions raised on April 10 alive year-round.",
+    body: "Reading circles, follow-on salons, and workshops keep the questions raised on April 10 alive year-round.",
   },
 ];
 

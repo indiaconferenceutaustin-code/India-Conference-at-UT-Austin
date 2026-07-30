@@ -19,14 +19,17 @@ const featured = [
   {
     name: "Arvind Subramanian",
     role: "Senior Fellow, Peterson Institute; Former Chief Economic Adviser, Government of India",
+    image: "/speakers/arvind-subramanian.jpg",
   },
   {
     name: "Tanvi Madan",
     role: "Senior Fellow & Director, The India Project, Brookings Institution",
+    image: "/speakers/tanvi-madan.jpg",
   },
   {
     name: "D.C. Manjunath",
     role: "Consul General of India, Houston",
+    image: "/speakers/dc-manjunath.jpg",
   },
 ];
 
@@ -133,17 +136,25 @@ function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featured.map((sp) => (
-              <div key={sp.name} className="space-y-4">
-                <div className="aspect-[4/5] bg-secondary outline-1 -outline-offset-1 outline-foreground/5 grid place-items-center rounded-sm">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted">
-                    {sp.name
-                      .split(" ")
-                      .map((w) => w[0])
-                      .join("")}
-                  </span>
+              <div key={sp.name} className="space-y-4 group">
+                <div className="aspect-[4/5] bg-secondary outline-1 -outline-offset-1 outline-foreground/5 overflow-hidden rounded-sm relative flex items-center justify-center">
+                  {sp.image ? (
+                    <img
+                      src={sp.image}
+                      alt={sp.name}
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted">
+                      {sp.name
+                        .split(" ")
+                        .map((w) => w[0])
+                        .join("")}
+                    </span>
+                  )}
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm tracking-tight">{sp.name}</h3>
+                  <h3 className="font-bold text-sm tracking-tight transition-colors group-hover:text-accent">{sp.name}</h3>
                   <p className="text-[11px] text-muted leading-tight mt-1">
                     {sp.role}
                   </p>

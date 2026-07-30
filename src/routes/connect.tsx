@@ -1,5 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
+import { Instagram, Youtube, Facebook, Twitter, Linkedin, Mail, Globe } from "lucide-react";
+
+const socialLinks = [
+  { href: "https://www.linkedin.com/company/utaustinindiaconf", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://x.com/utindiaconf", icon: Twitter, label: "X" },
+  { href: "https://www.instagram.com/utindiaconf", icon: Instagram, label: "Instagram" },
+  { href: "https://www.youtube.com/@utindiaconf", icon: Youtube, label: "YouTube" },
+  { href: "https://www.facebook.com/people/India-Conference-at-UT-Austin/61591709834941/", icon: Facebook, label: "Facebook" },
+  { href: "mailto:indiaconferenceutaustin@gmail.com", icon: Mail, label: "Email" },
+  { href: "https://india-conference-at-ut-austin.onrender.com/", icon: Globe, label: "Website" },
+];
 
 export const Route = createFileRoute("/connect")({
   head: () => ({
@@ -26,7 +37,7 @@ function Connect() {
       <PageHero
         eyebrow="Connect"
         title="Register, subscribe, or join the team."
-        lede="Whether you're attending in March, publishing with Insights, or applying to organize — start here."
+        lede="Whether you're attending, volunteering, or applying to organize — start here."
       />
 
       <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -156,18 +167,24 @@ function Connect() {
 
           <div className="p-8 bg-secondary text-foreground">
             <div className="font-mono text-xs text-accent mb-4 uppercase tracking-widest">
-              Follow
+              Contact & Follow
             </div>
-            <div className="flex gap-3">
-              {["LinkedIn", "Twitter", "Instagram"].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  className="px-4 py-2 border border-white/20 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"
-                >
-                  {s}
-                </a>
-              ))}
+            <div className="flex flex-wrap gap-2">
+              {socialLinks.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={s.label}
+                    className="flex items-center justify-center p-2.5 border border-white/10 hover:bg-white/10 hover:border-accent hover:text-accent transition-colors"
+                  >
+                    <Icon className="size-4.5" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

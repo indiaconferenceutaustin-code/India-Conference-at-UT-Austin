@@ -1,4 +1,15 @@
 import { Link } from "@tanstack/react-router";
+import { Instagram, Youtube, Facebook, Twitter, Linkedin, Mail, Globe } from "lucide-react";
+
+const socialLinks = [
+  { href: "https://www.linkedin.com/company/utaustinindiaconf", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://x.com/utindiaconf", icon: Twitter, label: "X" },
+  { href: "https://www.instagram.com/utindiaconf", icon: Instagram, label: "Instagram" },
+  { href: "https://www.youtube.com/@utindiaconf", icon: Youtube, label: "YouTube" },
+  { href: "https://www.facebook.com/people/India-Conference-at-UT-Austin/61591709834941/", icon: Facebook, label: "Facebook" },
+  { href: "mailto:indiaconferenceutaustin@gmail.com", icon: Mail, label: "Email" },
+  { href: "https://india-conference-at-ut-austin.onrender.com/", icon: Globe, label: "Website" },
+];
 
 export function SiteFooter() {
   return (
@@ -12,16 +23,22 @@ export function SiteFooter() {
             A student-led initiative fostering dialogue on the most pressing issues
             facing the world's largest democracy.
           </p>
-          <div className="flex gap-4">
-            {["Li", "Tw", "Ig"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="size-8 grid place-items-center border border-border rounded-full text-xs hover:bg-foreground hover:text-background transition-colors"
-              >
-                {s}
-              </a>
-            ))}
+          <div className="flex flex-wrap gap-3">
+            {socialLinks.map((s) => {
+              const Icon = s.icon;
+              return (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="size-8 grid place-items-center border border-border rounded-full hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors text-muted-foreground"
+                >
+                  <Icon className="size-4" />
+                </a>
+              );
+            })}
           </div>
         </div>
         <div>
@@ -29,7 +46,6 @@ export function SiteFooter() {
             Explore
           </h5>
           <ul className="text-xs space-y-2 text-muted">
-            <li><Link to="/insights" className="hover:text-accent">India Insights</Link></li>
             <li><Link to="/conference" className="hover:text-accent">Conference Program</Link></li>
             <li><Link to="/about" className="hover:text-accent">Student Team</Link></li>
             <li><Link to="/community" className="hover:text-accent">Volunteer Portal</Link></li>

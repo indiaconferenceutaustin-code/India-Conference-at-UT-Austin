@@ -14,7 +14,6 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as ConferenceRouteImport } from './routes/conference'
 import { Route as ConnectRouteImport } from './routes/connect'
-import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
@@ -43,11 +42,6 @@ const ConnectRoute = ConnectRouteImport.update({
   path: '/connect',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InsightsRoute = InsightsRouteImport.update({
-  id: '/insights',
-  path: '/insights',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PartnersRoute = PartnersRouteImport.update({
   id: '/partners',
   path: '/partners',
@@ -65,7 +59,6 @@ export interface FileRoutesByFullPath {
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
   '/connect': typeof ConnectRoute
-  '/insights': typeof InsightsRoute
   '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -75,7 +68,6 @@ export interface FileRoutesByTo {
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
   '/connect': typeof ConnectRoute
-  '/insights': typeof InsightsRoute
   '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -86,7 +78,6 @@ export interface FileRoutesById {
   '/community': typeof CommunityRoute
   '/conference': typeof ConferenceRoute
   '/connect': typeof ConnectRoute
-  '/insights': typeof InsightsRoute
   '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -98,7 +89,6 @@ export interface FileRouteTypes {
     | '/community'
     | '/conference'
     | '/connect'
-    | '/insights'
     | '/partners'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
@@ -108,7 +98,6 @@ export interface FileRouteTypes {
     | '/community'
     | '/conference'
     | '/connect'
-    | '/insights'
     | '/partners'
     | '/sitemap.xml'
   id:
@@ -118,7 +107,6 @@ export interface FileRouteTypes {
     | '/community'
     | '/conference'
     | '/connect'
-    | '/insights'
     | '/partners'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
@@ -129,7 +117,6 @@ export interface RootRouteChildren {
   CommunityRoute: typeof CommunityRoute
   ConferenceRoute: typeof ConferenceRoute
   ConnectRoute: typeof ConnectRoute
-  InsightsRoute: typeof InsightsRoute
   PartnersRoute: typeof PartnersRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -171,13 +158,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConnectRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/insights': {
-      id: '/insights'
-      path: '/insights'
-      fullPath: '/insights'
-      preLoaderRoute: typeof InsightsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/partners': {
       id: '/partners'
       path: '/partners'
@@ -201,7 +181,6 @@ const rootRouteChildren: RootRouteChildren = {
   CommunityRoute: CommunityRoute,
   ConferenceRoute: ConferenceRoute,
   ConnectRoute: ConnectRoute,
-  InsightsRoute: InsightsRoute,
   PartnersRoute: PartnersRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
