@@ -42,6 +42,7 @@ const advisors = [
     role: "Chair, Department of Business, Government & Society, McCombs",
     image: "/advisors/kishore-gawande.jpg",
     links: {
+      web: "https://liberalarts.utexas.edu/southasia/faculty/gawandek",
       email: "kishore.gawande@mccombs.utexas.edu",
       linkedin: "https://www.linkedin.com/in/kishore-gawande-9327773/",
     },
