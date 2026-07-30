@@ -54,7 +54,7 @@ export function SiteFooter() {
           <ul className="text-xs space-y-2 text-muted">
             <li><Link to="/conference" className="hover:text-accent">Conference Program</Link></li>
             <li><Link to="/about" className="hover:text-accent">Student Team</Link></li>
-            <li><Link to="/community" className="hover:text-accent">Volunteer Portal</Link></li>
+            <li><Link to="/community" className="hover:text-accent">Get Involved</Link></li>
             <li><Link to="/chronicle" className="hover:text-accent">The Chronicle</Link></li>
           </ul>
         </div>

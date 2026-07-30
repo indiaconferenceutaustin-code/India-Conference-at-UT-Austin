@@ -267,30 +267,31 @@ function Conference() {
                   </div>
                   <p className="text-sm text-muted leading-relaxed mb-6">{s.blurb}</p>
                 </div>
-                <div className="flex items-center justify-between gap-4 pt-3 border-t border-border flex-wrap sm:flex-nowrap">
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                <div className="pt-3 border-t border-border">
+                  <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
                     {s.speakers.map((sp, idx) => (
-                      <span key={sp} className="inline-flex items-center gap-x-2">
+                      <span key={sp} className="inline-flex items-center gap-x-2.5">
                         {idx > 0 && <span className="text-border/40 text-[9px]">|</span>}
                         <span className="font-mono text-[10px] uppercase tracking-widest text-foreground">
                           {sp}
                         </span>
                       </span>
                     ))}
+                    {s.youtubeUrl && (
+                      <span className="inline-flex items-center gap-x-2.5">
+                        <span className="text-border/40 text-[9px]">|</span>
+                        <a
+                          href={s.youtubeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono text-[10px] uppercase tracking-widest text-accent hover:text-accent/80 transition-colors flex items-center gap-1 font-bold"
+                        >
+                          Watch Session
+                          <span>→</span>
+                        </a>
+                      </span>
+                    )}
                   </div>
-                  {s.youtubeUrl && (
-                    <a
-                      href={s.youtubeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-accent/20 bg-accent/5 hover:bg-accent hover:text-accent-foreground text-[10px] font-mono uppercase tracking-wider transition-colors rounded-sm text-accent shrink-0"
-                    >
-                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                      </svg>
-                      Watch
-                    </a>
-                  )}
                 </div>
               </div>
             </div>

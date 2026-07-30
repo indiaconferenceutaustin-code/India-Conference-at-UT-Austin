@@ -15,9 +15,9 @@ export function PartnersStrip() {
         <div className="text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-muted mb-8 text-center whitespace-nowrap">
           Thanks to our Partners who made this possible
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 opacity-80">
+        <div className="flex flex-nowrap justify-start md:justify-center items-center gap-x-10 gap-y-6 opacity-80 overflow-x-auto scrollbar-none whitespace-nowrap pb-2">
           {partners.map((p) => (
-            <span key={p} className="font-bold tracking-tighter text-sm">
+            <span key={p} className="font-bold tracking-tighter text-sm whitespace-nowrap shrink-0">
               {p}
             </span>
           ))}
