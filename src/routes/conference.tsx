@@ -239,8 +239,8 @@ function Conference() {
     <>
       <PageHero
         eyebrow="UTAIC 2026 · Inaugural"
-        title="Eight sessions. One question about the next century."
-        lede="April 10, 2026 · GSB 2.124 · McCombs School of Business. Pre-conference programming at Rowling Hall and the Harry Ransom Center on April 9–10."
+        title="Eight sessions. Across the questions that will define the next century."
+        lede="At the stroke of midnight on August 15, 2047, India will turn 100. The choices made over the next two decades — on growth, governance, technology, sustainability, and global positioning — will determine what kind of century it becomes."
       />
 
       {/* Sessions */}
@@ -286,7 +286,7 @@ function Conference() {
                           rel="noopener noreferrer"
                           className="font-mono text-[10px] uppercase tracking-widest text-accent hover:text-accent/80 transition-colors flex items-center gap-1 font-bold"
                         >
-                          Watch Session
+                          Watch
                           <span>→</span>
                         </a>
                       </span>

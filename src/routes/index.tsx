@@ -205,7 +205,7 @@ function Home() {
                 <div className="col-span-10 md:col-span-6 text-lg font-bold tracking-tight">
                   {title}
                 </div>
-                <div className="col-span-12 md:col-span-5 text-xs text-background/60 md:text-right">
+                <div className="col-span-12 md:col-span-5 text-xs text-accent md:text-right font-medium">
                   {sub}
                 </div>
               </div>
