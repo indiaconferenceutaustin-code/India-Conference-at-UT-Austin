@@ -30,8 +30,15 @@ export function SiteFooter() {
             facing the world's largest democracy.
           </p>
           <div className="flex flex-wrap gap-3">
-            {socialLinks.map((s) => {
+            {socialLinks.map((s, idx) => {
               const Icon = s.icon;
+              // Tricolor sequence: Saffron (0), White (1), Green (2)
+              const tricolorStyles = [
+                "text-[#FF671F] border-[#FF671F]/30 hover:bg-[#FF671F] hover:text-[#050505] hover:border-[#FF671F]",
+                "text-white/80 border-white/20 hover:bg-white hover:text-[#050505] hover:border-white",
+                "text-[#046A38] border-[#046A38]/30 hover:bg-[#046A38] hover:text-white hover:border-[#046A38]",
+              ];
+              const styleClass = tricolorStyles[idx % 3];
               return (
                 <a
                   key={s.label}
@@ -39,7 +46,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="size-8 grid place-items-center border border-border rounded-full hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors text-muted-foreground"
+                  className={`size-8 grid place-items-center border rounded-full transition-all duration-300 ${styleClass}`}
                 >
                   <Icon className="size-4" />
                 </a>
