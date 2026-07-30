@@ -268,13 +268,13 @@ function Conference() {
                   <p className="text-sm text-muted leading-relaxed mb-6">{s.blurb}</p>
                 </div>
                 <div className="flex items-center justify-between gap-4 pt-3 border-t border-border flex-wrap sm:flex-nowrap">
-                  <div className="flex flex-wrap gap-x-3 gap-y-1">
-                    {s.speakers.map((sp) => (
-                      <span
-                        key={sp}
-                        className="font-mono text-[10px] uppercase tracking-widest text-foreground"
-                      >
-                        {sp}
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    {s.speakers.map((sp, idx) => (
+                      <span key={sp} className="inline-flex items-center gap-x-2">
+                        {idx > 0 && <span className="text-border/40 text-[9px]">|</span>}
+                        <span className="font-mono text-[10px] uppercase tracking-widest text-foreground">
+                          {sp}
+                        </span>
                       </span>
                     ))}
                   </div>
