@@ -173,33 +173,28 @@ function About() {
       </section>
 
       {/* Student Team Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-b border-border">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
+      <section className="max-w-7xl mx-auto px-6 py-24 border-b border-border">
+        <div className="mb-20 text-center max-w-2xl mx-auto">
           <div className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-3">
             The Organizers
           </div>
-          <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">
+          <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] bg-clip-text text-transparent">
             The Team Behind the 1st Annual UT India Conference
           </h2>
-          <div className="flex items-center justify-center gap-1.5 h-[3px] w-20 mx-auto mb-4">
-            <div className="bg-[#FF671F] h-full w-full rounded-full"></div>
-            <div className="bg-white/80 h-full w-full rounded-full"></div>
-            <div className="bg-[#046A38] h-full w-full rounded-full"></div>
-          </div>
           <p className="text-muted text-sm italic">
             "Building conversations. Inspiring impact. Shaping India's future."
           </p>
         </div>
 
         {/* Executive Board */}
-        <div className="mb-16">
+        <div className="mb-20">
           <div className="flex items-center gap-4 mb-8">
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-accent whitespace-nowrap">
               Executive Board
             </h3>
             <div className="h-px bg-border w-full" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: "Pranjal Awasthi", role: "Conference Chair", linkedin: "https://www.linkedin.com/in/pranjalawasthi/" },
               { name: "Divya Sharma", role: "Head of Marketing", linkedin: "https://www.linkedin.com/in/divya-shrma/" },
@@ -207,36 +202,40 @@ function About() {
               { name: "Puneet Purohit", role: "Head of Sponsorship", linkedin: "https://www.linkedin.com/in/punit-purohit" },
               { name: "Soham Mukherjee", role: "Co-Lead for Finance & Logistics", linkedin: "https://www.linkedin.com/in/mukherjeesoham/" },
             ].map((m) => (
-              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300 flex flex-col justify-center">
-                <div className="flex items-center justify-center gap-1.5 mb-1">
-                  <span className="font-bold text-sm text-foreground">{m.name}</span>
-                  {m.linkedin && (
-                    <a
-                      href={m.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                      title="LinkedIn Profile"
-                    >
-                      <Linkedin className="size-3.5" />
-                    </a>
-                  )}
+              <div key={m.name} className="relative p-8 bg-card/20 hover:bg-card/40 border border-white/5 hover:border-accent/30 transition-all duration-300 rounded-xl flex flex-col justify-center min-h-[120px] group overflow-hidden">
+                <div className="pr-8">
+                  <div className="font-bold text-base text-foreground tracking-tight mb-1.5 group-hover:text-accent transition-colors duration-300">
+                    {m.name}
+                  </div>
+                  <div className="text-xs text-muted-foreground tracking-wide font-mono uppercase">
+                    {m.role}
+                  </div>
                 </div>
-                <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
+                {m.linkedin && (
+                  <a
+                    href={m.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-6 right-6 text-muted-foreground hover:text-accent transition-colors p-1"
+                    title="LinkedIn Profile"
+                  >
+                    <Linkedin className="size-4" />
+                  </a>
+                )}
               </div>
             ))}
           </div>
         </div>
 
         {/* Coordinators */}
-        <div className="mb-16">
+        <div className="mb-20">
           <div className="flex items-center gap-4 mb-8">
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-accent whitespace-nowrap">
               Coordinators
             </h3>
             <div className="h-px bg-border w-full" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: "Anika Chock", role: "Marketing Coordinator", linkedin: "https://www.linkedin.com/in/anika-chock-8b95a8271/" },
               { name: "Vineeta Singh", role: "Marketing Coordinator", linkedin: "https://www.linkedin.com/in/vineetasinghmd/" },
@@ -244,22 +243,26 @@ function About() {
               { name: "Sudhir Gopalakrishnan", role: "Operations Coordinator", linkedin: "https://www.linkedin.com/in/sudhirganesh/" },
               { name: "Rishi Wadhwa", role: "Operations Coordinator", linkedin: "https://www.linkedin.com/in/rishi-wadhwa/" },
             ].map((m) => (
-              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300 flex flex-col justify-center">
-                <div className="flex items-center justify-center gap-1.5 mb-1">
-                  <span className="font-bold text-sm text-foreground">{m.name}</span>
-                  {m.linkedin && (
-                    <a
-                      href={m.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                      title="LinkedIn Profile"
-                    >
-                      <Linkedin className="size-3.5" />
-                    </a>
-                  )}
+              <div key={m.name} className="relative p-8 bg-card/20 hover:bg-card/40 border border-white/5 hover:border-accent/30 transition-all duration-300 rounded-xl flex flex-col justify-center min-h-[120px] group overflow-hidden">
+                <div className="pr-8">
+                  <div className="font-bold text-base text-foreground tracking-tight mb-1.5 group-hover:text-accent transition-colors duration-300">
+                    {m.name}
+                  </div>
+                  <div className="text-xs text-muted-foreground tracking-wide font-mono uppercase">
+                    {m.role}
+                  </div>
                 </div>
-                <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
+                {m.linkedin && (
+                  <a
+                    href={m.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-6 right-6 text-muted-foreground hover:text-accent transition-colors p-1"
+                    title="LinkedIn Profile"
+                  >
+                    <Linkedin className="size-4" />
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -273,7 +276,7 @@ function About() {
             </h3>
             <div className="h-px bg-border w-full" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               { name: "Maithili Saralaya", role: "Volunteer", linkedin: "https://www.linkedin.com/in/maithili-saralaya/" },
               { name: "Guru Prasad", role: "Volunteer", linkedin: "https://www.linkedin.com/in/prasad-b-guru/" },
@@ -282,22 +285,26 @@ function About() {
               { name: "Swati Pandey", role: "Volunteer", linkedin: "https://www.linkedin.com/in/swatip28/" },
               { name: "Rahul Paul", role: "Volunteer", linkedin: "https://www.linkedin.com/in/paul-rahul/" },
             ].map((m) => (
-              <div key={m.name} className="p-6 border border-white/5 bg-card/20 rounded-md hover:border-accent/30 transition-all duration-300 flex flex-col justify-center">
-                <div className="flex items-center justify-center gap-1.5 mb-1">
-                  <span className="font-bold text-sm text-foreground">{m.name}</span>
-                  {m.linkedin && (
-                    <a
-                      href={m.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                      title="LinkedIn Profile"
-                    >
-                      <Linkedin className="size-3.5" />
-                    </a>
-                  )}
+              <div key={m.name} className="relative p-6 bg-card/20 hover:bg-card/40 border border-white/5 hover:border-accent/30 transition-all duration-300 rounded-xl flex flex-col justify-center min-h-[110px] group overflow-hidden">
+                <div className="pr-8">
+                  <div className="font-bold text-sm text-foreground tracking-tight mb-1 group-hover:text-accent transition-colors duration-300">
+                    {m.name}
+                  </div>
+                  <div className="text-[10px] text-muted-foreground tracking-wide font-mono uppercase">
+                    {m.role}
+                  </div>
                 </div>
-                <div className="text-[10px] uppercase font-mono tracking-wider text-muted-foreground">{m.role}</div>
+                {m.linkedin && (
+                  <a
+                    href={m.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-4 right-4 text-muted-foreground hover:text-accent transition-colors p-1"
+                    title="LinkedIn Profile"
+                  >
+                    <Linkedin className="size-3.5" />
+                  </a>
+                )}
               </div>
             ))}
           </div>
