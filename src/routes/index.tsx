@@ -49,19 +49,13 @@ function Home() {
           <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
             Inaugural Edition · April 10, 2026
           </span>
-          <h1 className="mt-6 text-5xl lg:text-8xl font-black tracking-tighter text-balance leading-[0.9] mb-8">
+          <h1 className="mt-6 text-5xl lg:text-8xl font-black tracking-tighter text-balance leading-[0.9] mb-8 bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] bg-clip-text text-transparent">
             INDIA AT 100:
             <br />
             DECADES
             <br />
             OF DECISIONS
           </h1>
-          {/* Indian Flag Tricolor Strike */}
-          <div className="flex items-center gap-1.5 h-1 w-28 mb-8">
-            <div className="bg-[#FF671F] h-full w-full rounded-sm"></div>
-            <div className="bg-white/80 h-full w-full rounded-sm"></div>
-            <div className="bg-[#046A38] h-full w-full rounded-sm"></div>
-          </div>
           <div className="flex items-baseline gap-4 flex-wrap">
             <span className="font-mono text-xs text-accent">[UTAIC 2026]</span>
             <p className="text-xl max-w-xl font-medium tracking-tight text-pretty">
