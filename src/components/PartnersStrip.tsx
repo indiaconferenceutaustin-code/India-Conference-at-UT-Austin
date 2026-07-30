@@ -12,7 +12,7 @@ export function PartnersStrip() {
   return (
     <section className="py-12 px-6 border-y border-border">
       <div className="max-w-7xl mx-auto">
-        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted mb-8 text-center">
+        <div className="text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-muted mb-8 text-center whitespace-nowrap">
           Thanks to our Partners who made this possible
         </div>
         <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 opacity-80">
